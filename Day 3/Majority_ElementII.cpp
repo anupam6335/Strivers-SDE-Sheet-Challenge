@@ -19,3 +19,22 @@ vector<int> majorityElementII(vector<int> &arr) {
     }
     return ans;
 }
+
+// leetcode solution
+class Solution {
+public:
+    vector<int> majorityElement(vector<int>& nums) {
+        int ans=0; int n=nums.size();
+        int k=3;
+        map<int,int> m;
+        for(int i=0;i<n;i++)
+        m[nums[i]]++;
+        vector<int> v;
+        for(auto &x:m){
+        if(x.second>(n/k)){
+            v.push_back(x.first);
+        }
+        }
+        return v;
+    }
+};
